@@ -2,16 +2,9 @@
 
  const app = express();
 
- app.get("/users",(req,res)=>{
-   res.send({firstName:"Prajyot",lastName:"Chavan"})
- })
-
- app.post("/users",(req,res)=>{
-   res.send("Data saved Successfully")
- })
-
- app.use("/",(req,res) => {
-    res.send("Hello ")
+ app.get("/users/:userId/:name/:password",(req,res)=>{
+   console.log({...req.params})
+   res.send({'firstName':"Prajyot",'lastName':"Chavan"})
  })
 
  app.listen(3000, () => {
